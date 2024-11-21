@@ -7,5 +7,6 @@ data class DataSiswa(
     val nim : String="",
     val alamat : String="",
     val notelpon:String=""
+
 )
 
