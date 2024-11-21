@@ -70,7 +70,48 @@ fun FormulirView(
                         modifier = Modifier.fillMaxWidth().padding(5.dp),
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
                     )
-
+                    TextField(
+                        value = nim,
+                        onValueChange = { nim = it },
+                        label = {
+                            Text(text = "Nim")
+                        },
+                        placeholder = {
+                            Text(text = "Isi Nim Anda")
+                        },
+                        modifier = Modifier.fillMaxWidth().padding(5.dp),
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+                    )
+                    TextField(
+                        value = alamat,
+                        onValueChange = { alamat = it },
+                        label = {
+                            Text(text = "Alamat")
+                        },
+                        placeholder = {
+                            Text(text = "Isi Alamat Anda")
+                        },
+                        modifier = Modifier.fillMaxWidth().padding(5.dp)
+                    )
+                    TextField(
+                        value = notelpon,
+                        onValueChange = { notelpon = it },
+                        label = {
+                            Text(text = "No Telpon")
+                        },
+                        placeholder = {
+                            Text(text = "Isi No Telpon Anda")
+                        },
+                        modifier = Modifier.fillMaxWidth().padding(5.dp),
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+                    )
+                    Button(
+                        modifier = Modifier.fillMaxWidth(),
+                        onClick = {
+                            onSubmitClicked(listData)
+                        }) {
+                        Text(text = "Simpan")
+                    }
                 }
             }
         }
