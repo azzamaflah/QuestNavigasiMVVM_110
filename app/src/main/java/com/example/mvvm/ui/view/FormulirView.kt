@@ -33,7 +33,7 @@ fun FormulirView(
     var alamat by remember { mutableStateOf("") }
     var notelpon by remember { mutableStateOf("") }
 
-    val listData: MutableList<String> = mutableListOf(nama, gender, email, nim, alamat, notelpon)
+    val listData : MutableList<String> = mutableListOf(nama, gender, email, nim, alamat, notelpon)
 
     Column(
         modifier = modifier.fillMaxSize().padding(16.dp),
@@ -50,70 +50,69 @@ fun FormulirView(
             },
             modifier = Modifier.fillMaxWidth().padding(5.dp),
         )
-        Row(modifier = Modifier.fillMaxWidth()) {
-            listJK.forEach { selectedGender ->
+        Row (modifier = Modifier.fillMaxWidth()){
+            listJK.forEach{selectedGender->
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     RadioButton(
                         selected = gender == selectedGender,
-                        onClick = { gender = selectedGender }
+                        onClick = {gender = selectedGender}
                     )
                     Text(text = selectedGender)
-                    TextField(
-                        value = email,
-                        onValueChange = { email = it },
-                        label = {
-                            Text(text = "Email")
-                        },
-                        placeholder = {
-                            Text(text = "Isi Email Anda")
-                        },
-                        modifier = Modifier.fillMaxWidth().padding(5.dp),
-                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
-                    )
-                    TextField(
-                        value = nim,
-                        onValueChange = { nim = it },
-                        label = {
-                            Text(text = "Nim")
-                        },
-                        placeholder = {
-                            Text(text = "Isi Nim Anda")
-                        },
-                        modifier = Modifier.fillMaxWidth().padding(5.dp),
-                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
-                    )
-                    TextField(
-                        value = alamat,
-                        onValueChange = { alamat = it },
-                        label = {
-                            Text(text = "Alamat")
-                        },
-                        placeholder = {
-                            Text(text = "Isi Alamat Anda")
-                        },
-                        modifier = Modifier.fillMaxWidth().padding(5.dp)
-                    )
-                    TextField(
-                        value = notelpon,
-                        onValueChange = { notelpon = it },
-                        label = {
-                            Text(text = "No Telpon")
-                        },
-                        placeholder = {
-                            Text(text = "Isi No Telpon Anda")
-                        },
-                        modifier = Modifier.fillMaxWidth().padding(5.dp),
-                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
-                    )
-                    Button(
-                        modifier = Modifier.fillMaxWidth(),
-                        onClick = {
-                            onSubmitClicked(listData)
-                        }) {
-                        Text(text = "Simpan")
-                    }
-                }
+                } }
+        }
+        TextField(
+            value = email,
+            onValueChange = { email = it },
+            label = {
+                Text(text = "Email")
+            },
+            placeholder = {
+                Text(text = "Isi Email Anda")
+            },
+            modifier = Modifier.fillMaxWidth().padding(5.dp),
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
+        )
+        TextField(
+            value = nim,
+            onValueChange = { nim = it },
+            label = {
+                Text(text = "Nim")
+            },
+            placeholder = {
+                Text(text = "Isi Nim Anda")
+            },
+            modifier = Modifier.fillMaxWidth().padding(5.dp),
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+        )
+        TextField(
+            value = alamat,
+            onValueChange = { alamat = it },
+            label = {
+                Text(text = "Alamat")
+            },
+            placeholder = {
+                Text(text = "Isi Alamat Anda")
+            },
+            modifier = Modifier.fillMaxWidth().padding(5.dp)
+        )
+        TextField(
+            value = notelpon,
+            onValueChange = { notelpon = it },
+            label = {
+                Text(text = "No Telpon")
+            },
+            placeholder = {
+                Text(text = "Isi No Telpon Anda")
+            },
+            modifier = Modifier.fillMaxWidth().padding(5.dp),
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+        )
+        Button(
+            modifier = Modifier.fillMaxWidth(),
+            onClick = {
+                onSubmitClicked(listData)
+            }) {
+            Text(text = "Simpan")
             }
         }
-    }
 }
